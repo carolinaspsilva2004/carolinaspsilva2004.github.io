@@ -22,12 +22,12 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
         working-directory: my-app
+        run: npm install
 
       - name: Build project
-        run: npm run build
         working-directory: my-app
+        run: npm run build
 
       - name: Upload build
         uses: actions/upload-pages-artifact@v3
@@ -38,13 +38,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
 
-    # 🔥 ISTO É O QUE FALTAVA
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
-
