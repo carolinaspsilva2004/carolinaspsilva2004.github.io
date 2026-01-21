@@ -23,19 +23,25 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: my-app
 
-      - name: Build project
+      - name: Build
         run: npm run build
-        working-directory: my-app
 
-      - name: Upload build
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: my-app/dist
+          path: dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
+    # 🔥 ISTO É O QUE FALTAVA
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
