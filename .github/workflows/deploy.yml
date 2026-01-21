@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: my-app
-        run: npm install
+        run: npm ci
 
       - name: Build project
         working-directory: my-app
@@ -42,5 +42,4 @@ jobs:
       name: github-pages
 
     steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
