@@ -1,0 +1,314 @@
+/* =========================
+   DESIGN TOKENS
+   ========================= */
+:root {
+  --bg-main: #f4fafa;
+  --bg-card: #e9f5f3;
+  --bg-accent: #cfe8e5;
+  --bg-hero: #b6e0dc;
+
+  --primary: #1f6f78;
+  --secondary: #3aa6b9;
+  --accent: #6fd6c8;
+
+  --text-main: #0f2f33;
+  --text-muted: #4f6f73;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+
+  --shadow-soft: 0 10px 30px rgba(31, 111, 120, 0.08);
+  --shadow-hover: 0 18px 40px rgba(31, 111, 120, 0.14);
+
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.35s ease;
+}
+
+/* =========================
+   GLOBAL RESET
+   ========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(180deg, #f4fafa, #e3f2f0);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   HOME LAYOUT
+   ========================= */
+.home {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.hero-banner {
+  background: linear-gradient(135deg, var(--bg-hero), var(--bg-accent));
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 3rem;
+}
+
+.hero-banner h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.hero-banner p {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+/* =========================
+   BENTO GRID
+   ========================= */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "university university university photo photo photo"
+    "personal personal personal photo photo photo"
+    "about about skills skills links links";
+  gap: 2rem;
+}
+
+.grid-university {
+  grid-area: university;
+}
+
+.grid-personal {
+  grid-area: personal;
+}
+
+.grid-photo {
+  grid-area: photo;
+}
+
+.grid-about {
+  grid-area: about;
+}
+
+.grid-skills {
+  grid-area: skills;
+}
+
+.grid-links {
+  grid-area: links;
+}
+
+/* =========================
+   CARDS
+   ========================= */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* =========================
+   HERO CARDS
+   ========================= */
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-card h2 {
+  font-size: 2.4rem;
+  color: var(--primary);
+}
+
+.hero-card p {
+  color: var(--text-muted);
+}
+
+/* =========================
+   PROFILE IMAGE
+   ========================= */
+.profile-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  min-height: 420px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   ABOUT
+   ========================= */
+.about {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* =========================
+   SKILLS
+   ========================= */
+.skills h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.skills-section {
+  margin-top: 1.2rem;
+}
+
+.skills-section strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--secondary);
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skills-grid span {
+  background: rgba(31, 111, 120, 0.1);
+  color: var(--primary);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* =========================
+   LINKS
+   ========================= */
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--primary);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  background: rgba(31, 111, 120, 0.1);
+  transition: transform var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.links a:hover {
+  transform: translateY(-2px);
+  background: rgba(31, 111, 120, 0.2);
+}
+
+/* =========================
+   CTA BUTTONS
+   ========================= */
+.cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.cta:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.cta.secondary {
+  background: var(--secondary);
+}
+
+/* =========================
+   PROJECTS PREVIEW
+   ========================= */
+.projects-preview {
+  margin-top: 4rem;
+}
+
+.projects-preview h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 1100px) {
+  .home-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "university university"
+      "photo photo"
+      "personal personal"
+      "about skills"
+      "links links";
+  }
+}
+
+@media (max-width: 700px) {
+  .home {
+    padding: 2rem 1.25rem;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "university"
+      "photo"
+      "personal"
+      "about"
+      "skills"
+      "links";
+  }
+
+  .hero-card h2 {
+    font-size: 2rem;
+  }
+}
