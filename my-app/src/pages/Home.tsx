@@ -1,141 +1,141 @@
 import "../styles/Home.css";
-import "../assets/me.jpg";          
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  return (
-    <main className="home">
-      {/* HERO HEADER */}
-      <section className="hero-banner">
-        <h1>Carolina Silva</h1>
-        <p>MSc in Software Engineering · University of Aveiro</p>
-      </section>
+    return (
+        <main className="home">
+            {/* HERO HEADER */}
+            <section className="hero-banner">
+                <h1>Carolina Silva</h1>
+                <p>MSc in Software Engineering · University of Aveiro</p>
+            </section>
 
-      {/* MAIN BENTO GRID */}
-      <section className="home-grid">
-        {/* UNIVERSITY PROJECTS */}
-        <div className="card hero-card grid-university">
-          <h2>University Projects</h2>
-          <p>
-            Academic projects developed during my Bachelor’s and Master’s in
-            Software Engineering at the University of Aveiro, covering Machine
-            Learning, Software Engineering, Mobile Computing, Information
-            Visualization, and Data-Centric Systems.
-          </p>
+            {/* MAIN BENTO GRID */}
+            <section className="home-grid">
+                {/* UNIVERSITY PROJECTS */}
+                <div className="card hero-card grid-university">
+                    <h2>University Projects</h2>
+                    <p>
+                        Academic projects developed during my Bachelor’s and Master’s in
+                        Software Engineering at the University of Aveiro, covering Machine
+                        Learning, Software Engineering, Mobile Computing, Information
+                        Visualization, and Data-Centric Systems.
+                    </p>
 
 
-        <Link to="/projects" className="cta">
-        Explore
-        </Link>
+                    <Link to="/projects" className="cta">
+                        Explore
+                    </Link>
 
-        </div>
+                </div>
 
-        {/* PROFILE IMAGE */}
-        <div className="profile-image grid-photo">
-          <img src="/assets/me.jpg" alt="Carolina Silva" />
-        </div>
+                {/* PROFILE IMAGE */}
+                <div className="profile-image grid-photo">
+                    <img src="/assets/me.jpg" alt="Carolina Silva" />
+                </div>
 
-        {/* PERSONAL PROJECTS */}
-        <div className="card hero-card grid-personal">
-          <h2>Personal Projects</h2>
-          <p>
-            Personal and collaborative projects developed outside coursework,
-            focused on experimentation, system design, and the application of
-            software engineering principles to real-world problems.
-          </p>
+                {/* PERSONAL PROJECTS */}
+                <div className="card hero-card grid-personal">
+                    <h2>Personal Projects</h2>
+                    <p>
+                        Personal and collaborative projects developed outside coursework,
+                        focused on experimentation, system design, and the application of
+                        software engineering principles to real-world problems.
+                    </p>
 
-          <a
-            href="https://github.com/carolinaspsilva2004"
-            target="_blank"
-            rel="noreferrer"
-            className="cta secondary"
-          >
-            See More
-          </a>
-        </div>
+                    <a
+                        href="https://github.com/carolinaspsilva2004"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="cta secondary"
+                    >
+                        See More
+                    </a>
+                </div>
 
-        {/* ABOUT ME */}
-        <div className="card about grid-about">
-          <p>
-            I am a Software Engineering MSc student at the University of Aveiro
-            with a strong academic background in Machine Learning, Software
-            Engineering, and Data-Centric Systems. My work focuses on designing
-            and implementing reliable software solutions, combining solid
-            engineering principles with data analysis, visualization, and
-            user-centered design. I have experience developing mobile, web, and
-            backend systems through academic and collaborative projects.
-          </p>
-        </div>
+                {/* LEFT COLUMN: ABOUT + LINKS */}
+                <div className="stack-left">
+                    <div className="card about">
+                        <h3>About Me</h3>
+                        <p>
+                            I am a Software Engineering MSc student at the University of Aveiro
+                            with a strong academic background in Machine Learning, Software
+                            Engineering, and Data-Centric Systems. My work focuses on designing
+                            and implementing reliable software solutions, combining solid
+                            engineering principles with data analysis, visualization, and
+                            user-centered design. I have experience developing mobile, web, and
+                            backend systems through academic and collaborative projects.
+                        </p>
+                    </div>
 
-        {/* SKILLS */}
-        <div className="card skills grid-skills">
-          <h3>Technical Skills</h3>
+                    <div className="card links">
+                        <a
+                            href="https://github.com/carolinaspsilva2004"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            GitHub
+                        </a>
 
-          <div className="skills-section">
-            <strong>Programming Languages</strong>
-            <div className="skills-grid">
-              <span>Python</span>
-              <span>Java</span>
-              <span>C / C++</span>
-              <span>Dart</span>
-              <span>TypeScript</span>
-            </div>
-          </div>
+                        <a
+                            href="https://www.linkedin.com/in/carolina-silva-ua/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            LinkedIn
+                        </a>
 
-          <div className="skills-section">
-            <strong>Frameworks & Tools</strong>
-            <div className="skills-grid">
-              <span>React</span>
-              <span>Flutter</span>
-              <span>Spring Boot</span>
-              <span>PyTorch</span>
-              <span>Scikit-learn</span>
-              <span>Docker</span>
-            </div>
-          </div>
+                        <a href="mailto:carolinaspsilva.ua@gmail.com">Contact</a>
+                    </div>
+                </div>
+                {/* SKILLS */}
+                <div className="card skills grid-skills">
+                    <h3>Technical Skills</h3>
 
-          <div className="skills-section">
-            <strong>Data & Machine Learning</strong>
-            <div className="skills-grid">
-              <span>Machine Learning</span>
-              <span>Data Analysis</span>
-              <span>Medical Image Analysis</span>
-              <span>Model Evaluation</span>
-            </div>
-          </div>
+                    <div className="skills-section">
+                        <strong>Programming Languages</strong>
+                        <div className="skills-grid">
+                            <span>Python</span>
+                            <span>Java</span>
+                            <span>C / C++</span>
+                            <span>Dart</span>
+                            <span>TypeScript</span>
+                        </div>
+                    </div>
 
-          <div className="skills-section">
-            <strong>Databases & Systems</strong>
-            <div className="skills-grid">
-              <span>PostgreSQL</span>
-              <span>SQLite</span>
-              <span>REST APIs</span>
-              <span>Microservices</span>
-            </div>
-          </div>
-        </div>
+                    <div className="skills-section">
+                        <strong>Frameworks & Tools</strong>
+                        <div className="skills-grid">
+                            <span>React</span>
+                            <span>Flutter</span>
+                            <span>Spring Boot</span>
+                            <span>PyTorch</span>
+                            <span>Scikit-learn</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
 
-        {/* LINKS */}
-        <div className="card links grid-links">
-          <a
-            href="https://github.com/carolinaspsilva2004"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
+                    <div className="skills-section">
+                        <strong>Data & Machine Learning</strong>
+                        <div className="skills-grid">
+                            <span>Machine Learning</span>
+                            <span>Data Analysis</span>
+                            <span>Medical Image Analysis</span>
+                            <span>Model Evaluation</span>
+                        </div>
+                    </div>
 
-          <a
-            href="https://www.linkedin.com/in/carolina-silva-ua/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-
-          <a href="mailto:carolinaspsilva.ua@gmail.com">Contact</a>
-        </div>
-      </section>
-    </main>
-  );
+                    <div className="skills-section">
+                        <strong>Databases & Systems</strong>
+                        <div className="skills-grid">
+                            <span>PostgreSQL</span>
+                            <span>SQLite</span>
+                            <span>REST APIs</span>
+                            <span>Microservices</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    );
 }
