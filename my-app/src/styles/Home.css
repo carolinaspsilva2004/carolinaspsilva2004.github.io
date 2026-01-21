@@ -47,9 +47,10 @@ img {
    HOME CONTAINER
    ========================= */
 .home {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1.6rem 1.8rem 2.4rem;
+  width: 100%;
+  max-width: none;              /* 🔑 REMOVE o limite */
+  margin: 0;
+  padding: 1.6rem 2.5vw 2.4rem; /* padding fluido */
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
@@ -84,7 +85,7 @@ img {
    ========================= */
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(12, 1fr); /* 🔑 mais controlo */
   gap: 1.6rem;
   align-items: stretch;
 }
@@ -92,29 +93,16 @@ img {
 /* =========================
    GRID AREAS / TAMANHOS
    ========================= */
-.grid-university {
-  grid-column: span 2;
-}
+.grid-university { grid-column: span 5; }
+.grid-photo      { grid-column: span 2; }
+.grid-personal   { grid-column: span 5; }
 
-.grid-photo {
-  grid-column: span 2;
-}
-
-.grid-personal {
-  grid-column: span 2;
-}
-
-
-.grid-skills {
-  align-self: start;
-  grid-column: span 3;
-}
-
+.stack-left      { grid-column: span 5; }
+.grid-skills     { grid-column: span 7; }
 /* =========================
    LEFT COLUMN (ABOUT + LINKS)
    ========================= */
 .stack-left {
-  grid-column: span 3;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;

@@ -89,9 +89,11 @@ export default function Home() {
                     </div>
                 </div>
                 {/* SKILLS */}
+                {/* SKILLS */}
                 <div className="card skills grid-skills">
                     <h3>Technical Skills</h3>
 
+                    {/* PROGRAMMING LANGUAGES */}
                     <div className="skills-section">
                         <strong>Programming Languages</strong>
                         <div className="skills-grid">
@@ -100,21 +102,42 @@ export default function Home() {
                             <span>C / C++</span>
                             <span>Dart</span>
                             <span>TypeScript</span>
+                            <span>JavaScript</span>
+                            <span>MATLAB</span>
+                            <span>SQL</span>
+                            <span>Kotlin</span>
                         </div>
                     </div>
 
+                    {/* FRONTEND & MOBILE */}
                     <div className="skills-section">
-                        <strong>Frameworks & Tools</strong>
+                        <strong>Frontend & Mobile Development</strong>
                         <div className="skills-grid">
                             <span>React</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
                             <span>Flutter</span>
-                            <span>Spring Boot</span>
-                            <span>PyTorch</span>
-                            <span>Scikit-learn</span>
-                            <span>Docker</span>
+                            <span>Vite</span>
+                            <span>Figma</span>
                         </div>
                     </div>
 
+                    {/* BACKEND & SYSTEMS */}
+                    <div className="skills-section">
+                        <strong>Backend & Systems</strong>
+                        <div className="skills-grid">
+                            <span>Spring Boot</span>
+                            <span>Flask</span>
+                            <span>REST APIs</span>
+                            <span>Microservices</span>
+                            <span>Docker</span>
+                            <span>Nginx</span>
+                            <span>RabbitMQ</span>
+                            <span>Kafka</span>
+                        </div>
+                    </div>
+
+                    {/* DATA & MACHINE LEARNING */}
                     <div className="skills-section">
                         <strong>Data & Machine Learning</strong>
                         <div className="skills-grid">
@@ -122,19 +145,25 @@ export default function Home() {
                             <span>Data Analysis</span>
                             <span>Medical Image Analysis</span>
                             <span>Model Evaluation</span>
+                            <span>PyTorch</span>
+                            <span>Scikit-learn</span>
                         </div>
                     </div>
 
+                    {/* DATABASES & DEVOPS */}
                     <div className="skills-section">
-                        <strong>Databases & Systems</strong>
+                        <strong>Databases & DevOps</strong>
                         <div className="skills-grid">
                             <span>PostgreSQL</span>
+                            <span>MySQL</span>
+                            <span>MongoDB</span>
                             <span>SQLite</span>
-                            <span>REST APIs</span>
-                            <span>Microservices</span>
+                            <span>Terraform</span>
+                            <span>GitHub</span>
                         </div>
                     </div>
                 </div>
+
             </section>
         </main>
     );
