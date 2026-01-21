@@ -23,14 +23,16 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: my-app
 
-      - name: Build
+      - name: Build project
         run: npm run build
+        working-directory: my-app
 
-      - name: Upload Pages artifact
+      - name: Upload build
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: my-app/dist
 
   deploy:
     needs: build
@@ -45,3 +47,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
