@@ -5,7 +5,7 @@ export interface Project {
   title: string;
   description: string;
   technologies: string[];
-  image: string;
+  media: string[];        
   github?: string;
   status?: "public" | "private" | "coming-soon";
 }
