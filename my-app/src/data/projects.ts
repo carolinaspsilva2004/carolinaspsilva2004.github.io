@@ -20,7 +20,7 @@ export const projects: Project[] = [
             "Docker",
             "WearOS",
         ],
-        media: ["/assets/projects/fanzone.png"],
+        media: ["/assets/projects/fanzone/FanZone.png"],
         status: "public",
         github: "https://github.com/luanacarolinareis/FanZone",
     },
