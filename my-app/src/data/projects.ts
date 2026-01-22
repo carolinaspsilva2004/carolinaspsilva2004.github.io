@@ -25,7 +25,7 @@ export const projects: Project[] = [
         github: "https://github.com/luanacarolinareis/FanZone",
     },
 
-
+   
     // =========================
     // MACHINE LEARNING & DATA
     // =========================
@@ -84,7 +84,7 @@ export const projects: Project[] = [
         github: "https://github.com/detiuaveiro/group-project-es2526-302",
     },
 
-    {
+     {
         id: "nikcharge",
         title: "NikCharge — EV Charging Platform",
         description:
@@ -98,7 +98,7 @@ export const projects: Project[] = [
             "Docker",
             "Swagger",
         ],
-        media: ["/assets/projects/nikcharge.png"],
+        media: ["/assets/projects/nikcharge/3.png"],
         status: "public",
         github: "https://github.com/NikCharge/NikCharge",
     },
