@@ -152,20 +152,25 @@ img {
 }
 
 .cv-button {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.18);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 1.1rem 2.2rem;   /* ↑ mais área clicável */
   border-radius: 999px;
-  font-size: 1.2m;
-  font-weight: 600;
+  font-size: 1.1rem;       /* ↑ texto maior */
+  font-weight: 700;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  transition: all 0.25s ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .cv-button:hover {
   background: white;
   color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -304,21 +309,32 @@ img {
   padding: 0.45rem 1rem;
   font-size: 0.82rem;
   border-radius: var(--radius-md);
+
+  /* 🔵 cores refinadas */
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+  color: #ffffff;
+
+  font-weight: 700;
+  text-decoration: none;
+
+  /* ✨ transições suaves */
+  transition: background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.links button:hover {
   background: linear-gradient(
     135deg,
     var(--secondary),
     var(--accent)
   );
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-  transition: transform var(--transition),
-    box-shadow var(--transition);
-}
-
-.links a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
 }
 
 /* =========================
@@ -412,13 +428,18 @@ img {
 
 .modal-actions a,
 .modal-actions button {
+  background: transparent;
+  color: var(--secondary);
+  border: 1.5px solid rgba(26, 77, 143, 0.35); /* 🔑 borda visível */
   padding: 0.5rem 1.2rem;
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 700;
-  border: none;
   cursor: pointer;
-  text-decoration: none;
+  transition: background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
 .modal-actions .confirm {
