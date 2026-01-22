@@ -25,62 +25,32 @@ export const projects: Project[] = [
         github: "https://github.com/luanacarolinareis/FanZone",
     },
 
-    {
-        id: "nikcharge",
-        title: "NikCharge — EV Charging Platform",
-        description:
-            "Web platform for managing electric vehicle charging stations, enabling real-time availability tracking, reservations, payment processing, and operational dashboards for users and staff.",
-        technologies: [
-            "React",
-            "Spring Boot",
-            "Java",
-            "PostgreSQL",
-            "Stripe API",
-            "Docker",
-            "Swagger",
-        ],
-        media: ["/assets/projects/nikcharge.png"],
-        status: "public",
-        github: "https://github.com/NikCharge/NikCharge",
-    },
 
     // =========================
     // MACHINE LEARNING & DATA
     // =========================
     {
-        id: "brain-tumor-ml",
-        title: "Brain Tumor Classification",
+        id: "medical-ml-projects",
+        title: "Medical Image Analysis Projects",
         description:
-            "Medical image analysis project using classical Machine Learning models to classify brain tumors from MRI images, achieving over 99% accuracy with strong preprocessing and model comparison.",
+            "Medical imaging repository with two projects:\n\n• Brain Tumor Classification — Classical ML on MRI images (>99% accuracy).\n\n• Ocular Disease Recognition — Deep learning–based retinal disease detection with transfer learning and Grad-CAM.",
         technologies: [
             "Python",
             "Scikit-learn",
             "NumPy",
             "SVM",
             "Logistic Regression",
+            "PyTorch",
+            "EfficientNet",
+            "ResNet",
+            "Grad-CAM",
         ],
-        media: ["/assets/projects/faa.png"],
+        media: [
+            "/assets/projects/faa/1.png"],
         status: "public",
         github: "https://github.com/carolinaspsilva2004/FAA_Projects",
     },
 
-    {
-        id: "ocular-disease",
-        title: "Ocular Disease Recognition",
-        description:
-            "Multi-label deep learning system for detecting ocular diseases from retinal fundus images, addressing class imbalance and interpretability using transfer learning and Grad-CAM.",
-        technologies: [
-            "Python",
-            "PyTorch",
-            "EfficientNet",
-            "ResNet",
-            "Kaggle",
-            "Grad-CAM",
-        ],
-        media: ["/assets/projects/ocular.png"],
-        status: "public",
-        github: "https://github.com/carolinaspsilva2004/FAA_Projects",
-    },
 
     {
         id: "salary-visualization",
@@ -112,6 +82,25 @@ export const projects: Project[] = [
         media: ["/assets/projects/inflow/1.png"],
         status: "public",
         github: "https://github.com/detiuaveiro/group-project-es2526-302",
+    },
+
+    {
+        id: "nikcharge",
+        title: "NikCharge — EV Charging Platform",
+        description:
+            "Web platform for managing electric vehicle charging stations, enabling real-time availability tracking, reservations, payment processing, and operational dashboards for users and staff.",
+        technologies: [
+            "React",
+            "Spring Boot",
+            "Java",
+            "PostgreSQL",
+            "Stripe API",
+            "Docker",
+            "Swagger",
+        ],
+        media: ["/assets/projects/nikcharge.png"],
+        status: "public",
+        github: "https://github.com/NikCharge/NikCharge",
     },
 
     // =========================

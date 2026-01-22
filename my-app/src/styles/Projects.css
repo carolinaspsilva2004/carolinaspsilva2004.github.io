@@ -107,13 +107,12 @@
 .project-media {
   position: relative;
   overflow: clip;
-  background: linear-gradient(
-    135deg,
-    rgba(37, 124, 158, 0.18),
-    rgba(26, 77, 143, 0.18)
-  );
+  background: linear-gradient(135deg,
+      rgba(37, 124, 158, 0.18),
+      rgba(26, 77, 143, 0.18));
   padding-bottom: 1.5rem;
-  min-height: 420px;   /* 🔑 NOVO */
+  min-height: 360px;
+  /* 🔑 NOVO */
 }
 
 /* ---------- SINGLE IMAGE ---------- */
@@ -122,16 +121,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 0;     /* 🔑 remove a margem inferior */
+  padding-bottom: 0;
+  /* 🔑 remove a margem inferior */
 }
 
 .single-image {
-  width:100%;          /* ↓ antes 92% */
-  max-height: 100%;   /* ↓ antes 300px */
+  width: 100%;
+  /* ↓ antes 92% */
+  max-height: 100%;
+  /* ↓ antes 300px */
   object-fit: contain;
   border-radius: var(--radius-lg);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
   align-items: end;
+}
+
+.project-content p {
+  white-space: pre-line;
+  line-height: 1;
+  margin: 0;
 }
 
 /* ---------- MULTI MOCKUPS ---------- */
@@ -150,23 +158,28 @@
 
 /* esquerda */
 .mockup-0 {
-  width: 180px;        /* ↓ antes 210 */
+  width: 160px;
+  /* ↓ antes 210 */
   left: 7%;
-  bottom: -2%;         /* ↓ antes -8% */
+  bottom: -2%;
+  /* ↓ antes -8% */
   z-index: 1;
 }
 
 /* centro (principal) */
 .mockup-1 {
-  width: 200px;        /* ↓ antes 270 */
-  left: 36%;
-  bottom: -1%;          /* ↑ sobe a imagem */
+  width: 175px;
+  /* ↓ antes 270 */
+  left: 38%;
+  bottom: -1%;
+  /* ↑ sobe a imagem */
   z-index: 1;
 }
 
 /* direita */
 .mockup-2 {
-  width: 180px;        /* ↓ antes 210 */
+  width: 160px;
+  /* ↓ antes 210 */
   right: 7%;
   bottom: -2%;
   z-index: 1;
@@ -228,11 +241,9 @@
   font-size: 0.85rem;
   font-weight: 700;
   text-decoration: none;
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-  );
+  background: linear-gradient(135deg,
+      var(--primary),
+      var(--secondary));
   color: white;
   transition: transform var(--transition),
     box-shadow var(--transition);
