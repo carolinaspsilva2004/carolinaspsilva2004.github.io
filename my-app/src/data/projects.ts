@@ -88,7 +88,7 @@ export const projects: Project[] = [
         description:
             "Interactive data visualization project exploring global salary trends in AI and Data-related roles, highlighting the impact of experience, location, company size, and remote work.",
         technologies: ["React", "D3.js", "JavaScript", "Data Visualization"],
-        media: ["/assets/projects/vi_salary.png"],
+        media: ["/assets/projects/vi_salary/1.png"],
         status: "public",
         github: "https://github.com/carolinaspsilva2004/VI_AI_Salary_Explorer",
     },
@@ -109,7 +109,7 @@ export const projects: Project[] = [
             "PostgreSQL",
             "CI/CD",
         ],
-        media: ["/assets/projects/inflow.png"],
+        media: ["/assets/projects/inflow/1.png"],
         status: "public",
         github: "https://github.com/detiuaveiro/group-project-es2526-302",
     },

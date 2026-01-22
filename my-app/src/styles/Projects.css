@@ -122,14 +122,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 0;     /* 🔑 remove a margem inferior */
 }
 
 .single-image {
-  width: 70%;          /* ↓ antes 92% */
-  max-height: 200px;   /* ↓ antes 300px */
+  width:100%;          /* ↓ antes 92% */
+  max-height: 100%;   /* ↓ antes 300px */
   object-fit: contain;
   border-radius: var(--radius-lg);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  align-items: end;
 }
 
 /* ---------- MULTI MOCKUPS ---------- */
