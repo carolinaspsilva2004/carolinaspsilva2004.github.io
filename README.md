@@ -1,1 +1,1 @@
-# carolinaspsilva2004.github.io
+Personal portfolio website presenting academic and personal projects in Software Engineering, including Machine Learning, Full-Stack Development, and Data Visualization, with a clean and modern design.
