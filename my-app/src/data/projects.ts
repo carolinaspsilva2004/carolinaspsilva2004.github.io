@@ -82,7 +82,7 @@ export const projects: Project[] = [
         ],
         media: ["/assets/projects/inflow/1.png"],
         status: "public",
-        github: "https://github.com/detiuaveiro/group-project-es2526-302",
+        github: "https://github.com/detiuaveiro/group-project-es2526_302",
     },
 
      {
