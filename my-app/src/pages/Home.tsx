@@ -40,7 +40,7 @@ export default function Home() {
 
                 {/* PROFILE IMAGE */}
                 <div className="profile-image grid-photo">
-                    <img src="/assets/me.jpg" alt="Carolina Silva" />
+                    <img src="/assets/perfil.png" alt="Carolina Silva" />
                 </div>
 
                 {/* PERSONAL PROJECTS */}
