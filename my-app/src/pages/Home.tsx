@@ -172,7 +172,7 @@ export default function Home() {
                                 <p>Do you want to download my CV in PDF format?</p>
                                 <div className="modal-actions">
                                     <a
-                                        href="/assets/CV_CarolinaSilva.pdf"
+                                        href="/assets/CarolinaSilva_CV.pdf"
                                         download
                                         className="confirm"
                                     >
