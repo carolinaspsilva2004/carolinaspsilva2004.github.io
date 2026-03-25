@@ -465,14 +465,13 @@ img {
    DESKTOP VIEW - 100% HEIGHT DASHBOARD
    ========================= */
 @media (min-width: 1025px) {
-  body {
-    overflow: hidden;
-  }
 
   .home {
     height: 100vh;
     max-height: 100vh;
     padding: 1.5rem 2.5vw;
+    overflow: hidden;
+
   }
 
   .home-grid {
