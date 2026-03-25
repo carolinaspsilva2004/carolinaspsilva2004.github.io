@@ -63,7 +63,7 @@ img {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.3rem;
-  align-items: stretch; /* Garante que os cards na mesma linha ficam nivelados */
+  align-items: stretch;
 }
 
 /* =========================
@@ -82,7 +82,6 @@ img {
   gap: 1.3rem;
 }
 
-/* Mantém uma altura mínima, mas permite crescer caso o conteúdo precise (flexibilidade para mobile) */
 .grid-university,
 .grid-personal {
   min-height: 305px;
@@ -98,7 +97,7 @@ img {
 .card {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
-  padding: clamp(1.4rem, 3vw, 2rem); /* Adapta o padding ao ecrã */
+  padding: clamp(1.4rem, 3vw, 2rem);
   box-shadow: var(--shadow-soft);
   transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -148,7 +147,7 @@ img {
   text-decoration: none;
   border: 1.5px solid rgba(255, 255, 255, 0.4);
   transition: all 0.25s ease;
-  white-space: nowrap; /* Impede o botão de quebrar em duas linhas */
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -173,7 +172,7 @@ img {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-muted);
-  flex-grow: 1; /* Empurra o botão para baixo */
+  flex-grow: 1;
 }
 
 /* =========================
@@ -252,13 +251,13 @@ img {
    ========================= */
 .links {
   display: flex;
-  flex-wrap: wrap; /* Permite quebrar linha em mobile */
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.8rem;
 }
 
 .links button {
-  flex: 1 1 calc(33.333% - 0.8rem); /* Distribuídos de forma equitativa */
+  flex: 1 1 calc(33.333% - 0.8rem);
   border: none;
   cursor: pointer;
   padding: 0.7rem 1rem;
@@ -304,7 +303,7 @@ img {
   position: fixed;
   inset: 0;
   background: rgba(8, 36, 54, 0.6);
-  backdrop-filter: blur(4px); /* Fica espetacular em mobile */
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -368,61 +367,97 @@ img {
 }
 
 /* =========================
-   RESPONSIVE (MOBILE & TABLET)
+   RESPONSIVE (TABLET)
    ========================= */
 @media (max-width: 1024px) {
-  /* Em tablets, as caixas comportam-se de forma diferente para não esmagar o conteúdo */
   .grid-university { grid-column: span 6; }
-  .grid-photo      { grid-column: span 12; order: -1; } /* Foto sobe */
+  .grid-photo      { grid-column: span 12; order: -1; }
   .grid-personal   { grid-column: span 6; }
   .stack-left      { grid-column: span 12; }
   .grid-skills     { grid-column: span 12; }
   
   .profile-image img {
-    height: 300px; /* Foto ganha destaque horizontal no tablet */
+    height: 300px;
     width: 100%;
   }
 }
 
+/* =========================
+   RESPONSIVE (MOBILE APP FORMAT)
+   ========================= */
 @media (max-width: 768px) {
-  /* Comportamento de Mobile App Puro (1 Coluna) */
+  .home {
+    padding: 1.2rem 1rem;
+    gap: 1rem;
+  }
+
   .home-grid {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
   }
 
+  /* 🔑 REORDENAÇÃO VISUAL: Fluxo perfeito de uma App */
+  .header-card     { order: 1; }
+  .grid-photo      { order: 2; }
+  .stack-left      { order: 3; } /* Traz a bio e contactos para o topo */
+  .grid-skills     { order: 4; }
+  .grid-university { order: 5; }
+  .grid-personal   { order: 6; }
+
+  /* Ajustes do Cabeçalho */
   .header-card {
     flex-direction: column;
     text-align: center;
-    padding: 2rem 1.5rem;
+    padding: 2.2rem 1.5rem;
   }
-
   .cv-button {
     width: 100%;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    padding: 1rem; /* Maior área de toque */
   }
 
+  /* Ajustes da Imagem */
   .profile-image img {
-    min-height: 280px;
-    height: auto;
+    height: 35vh; /* Adapta-se à altura do ecrã */
+    min-height: 350px;
+    max-height: 550px;
+    object-position: center 35%; /* Garante que o rosto não é cortado */
   }
 
+  /* Ajustes dos Cartões em Geral */
   .grid-university,
   .grid-personal {
-    min-height: auto; /* Remove a altura mínima restritiva do desktop */
+    min-height: auto;
+  }
+  .card {
+    padding: 1.8rem 1.5rem; /* Margens internas mais confortáveis */
   }
 
+  /* 🔑 LINKS: Layout de Grelha Bonito para Mobile */
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 0.8rem;
+    padding: 1.5rem;
+  }
   .links button {
-    flex: 1 1 100%; /* Botões do Links empilham-se perfeitamente no telemóvel */
+    width: 100%;
+    padding: 0.9rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .links button:last-child {
+    grid-column: span 2; /* O botão de Contacto ocupa a largura toda em baixo */
   }
 
+  /* Modais em Telemóvel */
   .modal-actions {
     flex-direction: column;
   }
-  
   .modal-actions a, .modal-actions button {
     width: 100%;
     text-align: center;
+    padding: 0.9rem;
   }
 }
 
@@ -430,39 +465,33 @@ img {
    DESKTOP VIEW - 100% HEIGHT DASHBOARD
    ========================= */
 @media (min-width: 1025px) {
-  /* 1. Tranca a página inteira ao tamanho do ecrã */
   body {
-    overflow: hidden; /* Remove o scroll principal do site */
+    overflow: hidden;
   }
 
   .home {
-    height: 100vh; /* Ocupa exatamente 100% da altura da janela */
+    height: 100vh;
     max-height: 100vh;
     padding: 1.5rem 2.5vw;
   }
 
-  /* 2. O Grid passa a preencher o espaço vertical disponível */
   .home-grid {
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    /* Forçamos 3 linhas: Cabeçalho (auto), Meio (1fr) e Fundo (1fr) */
     grid-template-rows: auto 1fr 1.2fr; 
     gap: 1rem;
-    height: calc(100vh - 3rem); /* Altura total menos o padding */
+    height: calc(100vh - 3rem);
   }
 
-  /* Ajustes de altura e posicionamento para preencherem as células */
-  .header-card {
-    grid-row: 1;
-  }
-
+  .header-card { grid-row: 1; }
+  
   .grid-university,
   .grid-photo,
   .grid-personal {
     grid-row: 2;
     height: 100%;
-    min-height: 0; /* Remove a altura mínima anterior */
+    min-height: 0;
   }
 
   .stack-left,
@@ -478,22 +507,18 @@ img {
     justify-content: space-between;
   }
 
-  .card.about {
-    flex-grow: 1;
-  }
+  .card.about { flex-grow: 1; }
 
-  /* 3. Prevenção: Permite scroll invisível dentro dos cartões se o ecrã for muito pequeno */
   .card, .profile-image img {
     overflow-y: auto;
-    scrollbar-width: none; /* Firefox: esconde a barra */
+    scrollbar-width: none;
   }
   
   .card::-webkit-scrollbar,
   .profile-image img::-webkit-scrollbar {
-    display: none; /* Chrome/Safari: esconde a barra */
+    display: none;
   }
 
-  /* Garante que a foto preenche o espaço sem distorcer */
   .profile-image img {
     height: 100%;
     object-fit: cover;
