@@ -1,34 +1,32 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  min-width: 320px;
+  min-height: 100dvh;
 }
 
-.grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.card {
-  padding: 1.5rem;
-  border-radius: 12px;
-  background: #f4f4f4;
-}
-
-.card-image {
+#root {
   width: 100%;
-  border-radius: 8px;
+  min-height: 100dvh;
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
-.tag {
-  font-size: 0.8rem;
-  background: #ddd;
-  padding: 0.3rem 0.6rem;
-  border-radius: 999px;
+a {
+  color: inherit;
 }

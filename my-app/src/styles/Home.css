@@ -19,7 +19,9 @@
   --shadow-soft: 0 8px 22px rgba(8, 47, 54, 0.12);
   --shadow-hover: 0 14px 32px rgba(8, 47, 54, 0.18);
 
+  --surface-border: rgba(37, 124, 158, 0.08);
   --transition: 0.25s ease;
+  --content-max: 1400px;
 }
 
 /* =========================
@@ -33,9 +35,12 @@
 
 body {
   margin: 0;
+  min-width: 320px;
+  min-height: 100dvh;
   font-family: "Inter", system-ui, sans-serif;
   background: linear-gradient(180deg, #eaf2f5, #deedf1);
   color: var(--text-main);
+  overflow-x: hidden;
 }
 
 img {
@@ -43,68 +48,81 @@ img {
   max-width: 100%;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* =========================
    HOME CONTAINER
    ========================= */
 .home {
-  width: 100%;
-  max-width: 1400px;
+  width: min(100%, var(--content-max));
+  min-height: 100dvh;
   margin: 0 auto;
-  padding: clamp(1rem, 3vw, 2rem); 
+  padding: clamp(1rem, 3vw, 2rem);
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: clamp(1rem, 2vw, 1.3rem);
 }
 
 /* =========================
-   GRID PRINCIPAL — BENTO
+   MAIN LAYOUT
    ========================= */
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.3rem;
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1rem, 2vw, 1.3rem);
+  align-items: start;
 }
 
-/* =========================
-   GRID AREAS / TAMANHOS (DESKTOP)
-   ========================= */
-.header-card     { grid-column: span 12; }
-.grid-university { grid-column: span 5; }
-.grid-photo      { grid-column: span 2; }
-.grid-personal   { grid-column: span 5; }
-.stack-left      { grid-column: span 4; }
-.grid-skills     { grid-column: span 8; }
+.header-card,
+.grid-university,
+.grid-photo,
+.grid-personal,
+.stack-left,
+.grid-skills {
+  grid-column: 1 / -1;
+}
+
+.header-card {
+  order: 1;
+}
+
+.grid-photo {
+  order: 2;
+}
 
 .stack-left {
+  order: 3;
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: clamp(1rem, 2vw, 1.3rem);
 }
 
-.grid-university,
+.grid-skills {
+  order: 4;
+}
+
+.grid-university {
+  order: 5;
+}
+
 .grid-personal {
-  min-height: 305px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  order: 6;
 }
 
 /* =========================
    CARD BASE
    ========================= */
 .card {
+  min-width: 0;
   background: var(--bg-card);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius-lg);
-  padding: clamp(1.4rem, 3vw, 2rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
   box-shadow: var(--shadow-soft);
   transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
 }
 
 /* =========================
@@ -112,65 +130,78 @@ img {
    ========================= */
 .header-card {
   background: var(--bg-hero);
-  color: white;
+  color: #ffffff;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .header-text {
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .header-card h1 {
   margin: 0;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.95rem, 7vw, 3rem);
+  line-height: 1.05;
   font-weight: 800;
 }
 
 .header-card p {
   margin: 0;
-  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  max-width: 40rem;
+  font-size: clamp(0.95rem, 2.4vw, 1.05rem);
+  line-height: 1.6;
   opacity: 0.92;
 }
 
 .cv-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 18rem;
+  min-height: 3.25rem;
   background: rgba(255, 255, 255, 0.18);
-  color: white;
-  padding: 1rem 2rem;
+  color: #ffffff;
+  padding: 0.95rem 1.75rem;
   border-radius: 999px;
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   border: 1.5px solid rgba(255, 255, 255, 0.4);
-  transition: all 0.25s ease;
+  transition: all var(--transition);
   white-space: nowrap;
   cursor: pointer;
-}
-
-.cv-button:hover {
-  background: white;
-  color: var(--secondary);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
 }
 
 /* =========================
    HERO CARDS
    ========================= */
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .hero-card h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
+  margin: 0;
+  font-size: clamp(1.35rem, 4vw, 1.6rem);
   font-weight: 800;
   color: var(--primary);
 }
 
 .hero-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
   color: var(--text-muted);
   flex-grow: 1;
 }
@@ -180,14 +211,15 @@ img {
    ========================= */
 .profile-image {
   display: flex;
-  align-items: stretch;
-  justify-content: center;
+  min-width: 0;
 }
 
 .profile-image img {
   width: 100%;
-  min-height: 305px;
+  aspect-ratio: 4 / 5;
+  max-height: min(70dvh, 34rem);
   object-fit: cover;
+  object-position: center 28%;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
 }
@@ -197,35 +229,44 @@ img {
    ========================= */
 .about h3 {
   margin: 0 0 0.8rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.35rem, 4vw, 1.5rem);
   font-weight: 800;
   color: var(--primary);
 }
 
 .about p {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.65;
+  font-size: 0.98rem;
+  line-height: 1.72;
   color: var(--text-muted);
 }
 
 /* =========================
    SKILLS
    ========================= */
+.skills {
+  min-width: 0;
+}
+
 .skills h3 {
   margin: 0 0 1rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.35rem, 4vw, 1.5rem);
   font-weight: 800;
   color: var(--primary);
 }
 
 .skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.skills-section + .skills-section {
   margin-top: 1.2rem;
 }
 
 .skills-section strong {
   display: block;
-  margin-bottom: 0.6rem;
   font-size: 1rem;
   font-weight: 700;
   color: var(--secondary);
@@ -243,25 +284,26 @@ img {
   padding: 0.45rem 0.9rem;
   font-size: 0.85rem;
   font-weight: 600;
+  line-height: 1.3;
   border-radius: 12px;
 }
 
 /* =========================
-   LINKS — BLOCO FINAL
+   LINKS
    ========================= */
 .links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 0.8rem;
 }
 
 .links button {
-  flex: 1 1 calc(33.333% - 0.8rem);
+  width: 100%;
+  min-height: 3.15rem;
   border: none;
   cursor: pointer;
-  padding: 0.7rem 1rem;
-  font-size: 0.85rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
   border-radius: var(--radius-md);
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #ffffff;
@@ -269,31 +311,27 @@ img {
   transition: all var(--transition);
 }
 
-.links button:hover {
-  background: linear-gradient(135deg, var(--secondary), var(--accent));
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-}
-
 /* =========================
    CTA
    ========================= */
 .cta {
-  margin-top: 1rem;
-  display: inline-block;
-  padding: 0.6rem 1.4rem;
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.4rem;
   border-radius: var(--radius-md);
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  font-size: 0.9rem;
+  color: #ffffff;
+  font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
   transition: all var(--transition);
 }
 
-.cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+.cta.secondary {
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
 }
 
 /* =========================
@@ -308,15 +346,16 @@ img {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 1rem;
+  padding: clamp(1rem, 4vw, 1.5rem);
 }
 
 .modal {
-  background: white;
+  width: min(100%, 28rem);
+  max-height: min(90dvh, 42rem);
+  overflow-y: auto;
+  background: #ffffff;
   border-radius: var(--radius-lg);
-  padding: 2rem;
-  width: 100%;
-  max-width: 420px;
+  padding: clamp(1.25rem, 4vw, 2rem);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -331,7 +370,7 @@ img {
   margin: 0 0 1.5rem;
   color: var(--text-muted);
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .modal-actions {
@@ -343,10 +382,14 @@ img {
 
 .modal-actions a,
 .modal-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
   background: transparent;
   color: var(--secondary);
   border: 1.5px solid rgba(26, 77, 143, 0.35);
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.2rem;
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 700;
@@ -357,169 +400,194 @@ img {
 
 .modal-actions .confirm {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
+  color: #ffffff;
   border-color: transparent;
 }
 
 @keyframes scaleIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
 
-/* =========================
-   RESPONSIVE (TABLET)
-   ========================= */
-@media (max-width: 1024px) {
-  .grid-university { grid-column: span 6; }
-  .grid-photo      { grid-column: span 12; order: -1; }
-  .grid-personal   { grid-column: span 6; }
-  .stack-left      { grid-column: span 12; }
-  .grid-skills     { grid-column: span 12; }
-  
-  .profile-image img {
-    height: 300px;
-    width: 100%;
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
 /* =========================
-   RESPONSIVE (MOBILE APP FORMAT)
+   INTERACTIONS
    ========================= */
-@media (max-width: 768px) {
-  .home {
-    padding: 1.2rem 1rem;
-    gap: 1rem;
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
   }
 
-  .home-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .cv-button:hover {
+    background: #ffffff;
+    color: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
   }
 
-  /* 🔑 REORDENAÇÃO VISUAL: Fluxo perfeito de uma App */
-  .header-card     { order: 1; }
-  .grid-photo      { order: 2; }
-  .stack-left      { order: 3; } /* Traz a bio e contactos para o topo */
-  .grid-skills     { order: 4; }
-  .grid-university { order: 5; }
-  .grid-personal   { order: 6; }
+  .links button:hover {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  }
 
-  /* Ajustes do Cabeçalho */
+  .cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  }
+}
+
+/* =========================
+   SMALL TABLETS
+   ========================= */
+@media (min-width: 640px) {
   .header-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 2.2rem 1.5rem;
+    flex-direction: row;
+    align-items: center;
   }
+
   .cv-button {
-    width: 100%;
-    margin-top: 1rem;
-    padding: 1rem; /* Maior área de toque */
+    width: auto;
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 480px) {
+  .home {
+    padding: 1rem;
   }
 
-  /* Ajustes da Imagem */
-  .profile-image img {
-    height: 35vh; /* Adapta-se à altura do ecrã */
-    min-height: 350px;
-    max-height: 550px;
-    object-position: center 35%; /* Garante que o rosto não é cortado */
+  .header-card {
+    text-align: center;
+    align-items: center;
   }
 
-  /* Ajustes dos Cartões em Geral */
-  .grid-university,
-  .grid-personal {
-    min-height: auto;
-  }
-  .card {
-    padding: 1.8rem 1.5rem; /* Margens internas mais confortáveis */
+  .header-text {
+    align-items: center;
   }
 
-  /* 🔑 LINKS: Layout de Grelha Bonito para Mobile */
+  .header-card p {
+    max-width: 22rem;
+  }
+
+  .cv-button {
+    max-width: none;
+  }
+
   .links {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Duas colunas */
-    gap: 0.8rem;
-    padding: 1.5rem;
-  }
-  .links button {
-    width: 100%;
-    padding: 0.9rem 0.5rem;
-    font-size: 0.85rem;
-  }
-  .links button:last-child {
-    grid-column: span 2; /* O botão de Contacto ocupa a largura toda em baixo */
+    grid-template-columns: 1fr;
   }
 
-  /* Modais em Telemóvel */
   .modal-actions {
     flex-direction: column;
   }
-  .modal-actions a, .modal-actions button {
+
+  .modal-actions a,
+  .modal-actions button {
     width: 100%;
-    text-align: center;
-    padding: 0.9rem;
   }
 }
 
 /* =========================
-   DESKTOP VIEW - 100% HEIGHT DASHBOARD
+   TABLET
    ========================= */
-@media (min-width: 1025px) {
-
+@media (min-width: 768px) {
   .home {
-    height: 100vh;
-    max-height: 100vh;
-    padding: 1.5rem 2.5vw;
-    overflow: hidden;
-
+    padding: clamp(1.25rem, 3vw, 2.25rem);
   }
 
+  .profile-image img {
+    aspect-ratio: 16 / 9;
+    max-height: 24rem;
+  }
+
+  .skills-grid span {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
+   DESKTOP
+   ========================= */
+@media (min-width: 1100px) {
   .home-grid {
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto 1fr 1.2fr; 
-    gap: 1rem;
-    height: calc(100vh - 3rem);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: stretch;
   }
 
-  .header-card { grid-row: 1; }
-  
-  .grid-university,
+  .header-card,
   .grid-photo,
+  .stack-left,
+  .grid-skills,
+  .grid-university,
   .grid-personal {
-    grid-row: 2;
-    height: 100%;
-    min-height: 0;
+    order: 0;
   }
 
-  .stack-left,
-  .grid-skills {
-    grid-row: 3;
-    height: 100%;
+  .header-card {
+    grid-column: span 12;
+  }
+
+  .grid-university {
+    grid-column: span 5;
+    min-height: clamp(18rem, 24vw, 21rem);
+  }
+
+  .grid-photo {
+    grid-column: span 2;
+  }
+
+  .grid-personal {
+    grid-column: span 5;
+    min-height: clamp(18rem, 24vw, 21rem);
   }
 
   .stack-left {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: space-between;
+    grid-column: span 4;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    align-content: start;
   }
 
-  .card.about { flex-grow: 1; }
-
-  .card, .profile-image img {
-    overflow-y: auto;
-    scrollbar-width: none;
-  }
-  
-  .card::-webkit-scrollbar,
-  .profile-image img::-webkit-scrollbar {
-    display: none;
+  .grid-skills {
+    grid-column: span 8;
   }
 
   .profile-image img {
     height: 100%;
-    object-fit: cover;
+    min-height: clamp(18rem, 24vw, 21rem);
+    max-height: none;
+    aspect-ratio: auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  .home {
+    padding-inline: clamp(1.5rem, 3vw, 2.5rem);
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .cv-button,
+  .links button,
+  .cta,
+  .modal,
+  .modal-actions a,
+  .modal-actions button {
+    animation: none;
+    transition: none;
   }
 }
