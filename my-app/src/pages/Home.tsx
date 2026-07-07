@@ -89,43 +89,57 @@ export default function Home() {
                     <div className="skills-section">
                         <strong>Programming Languages</strong>
                         <div className="skills-grid">
-                            <span>Python</span><span>Java</span><span>C / C++</span>
-                            <span>Dart</span><span>TypeScript</span><span>JavaScript</span>
-                            <span>MATLAB</span><span>SQL</span><span>Kotlin</span>
+                            <span>Python</span><span>Java</span><span>JavaScript</span>
+                            <span>TypeScript</span><span>Dart</span><span>C / C++</span>
+                            <span>SQL</span><span>MATLAB</span><span>Kotlin</span>
                         </div>
                     </div>
 
                     <div className="skills-section">
-                        <strong>Frontend & Mobile Development</strong>
+                        <strong>Frontend, Mobile & UX</strong>
                         <div className="skills-grid">
                             <span>React</span><span>HTML</span><span>CSS</span>
-                            <span>Flutter</span><span>Vite</span><span>Figma</span>
+                            <span>Vite</span><span>Flutter</span><span>Web Platforms</span>
+                            <span>Mobile Apps</span><span>D3.js</span><span>Figma</span>
+                            <span>HCI</span>
                         </div>
                     </div>
 
                     <div className="skills-section">
-                        <strong>Backend & Systems</strong>
+                        <strong>Backend, APIs & Security</strong>
                         <div className="skills-grid">
                             <span>Spring Boot</span><span>Flask</span><span>REST APIs</span>
-                            <span>Microservices</span><span>Docker</span><span>Nginx</span>
-                            <span>Kong</span><span>RabbitMQ</span><span>Kafka</span>
+                            <span>Microservices</span><span>Swagger</span><span>OAuth/OIDC</span>
+                            <span>JWT</span><span>Firebase Auth</span><span>Stripe API</span>
                         </div>
                     </div>
 
                     <div className="skills-section">
-                        <strong>Data & Machine Learning</strong>
+                        <strong>Data, ML & Visualization</strong>
                         <div className="skills-grid">
                             <span>Machine Learning</span><span>Data Analysis</span>
-                            <span>Medical Image Analysis</span><span>Model Evaluation</span>
-                            <span>PyTorch</span><span>Scikit-learn</span>
+                            <span>Data Visualization</span><span>Medical Image Analysis</span>
+                            <span>Model Evaluation</span><span>PyTorch</span>
+                            <span>Scikit-learn</span><span>NumPy</span><span>SVM</span>
+                            <span>EfficientNet</span><span>ResNet</span><span>Grad-CAM</span>
                         </div>
                     </div>
 
                     <div className="skills-section">
-                        <strong>Databases & DevOps</strong>
+                        <strong>Databases & Storage</strong>
                         <div className="skills-grid">
                             <span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span>
-                            <span>SQLite</span><span>Terraform</span><span>GitHub</span>
+                            <span>SQLite</span><span>Supabase</span>
+                        </div>
+                    </div>
+
+                    <div className="skills-section">
+                        <strong>DevOps, Cloud & Observability</strong>
+                        <div className="skills-grid">
+                            <span>Docker</span><span>Kubernetes</span><span>Nginx</span><span>Terraform</span>
+                            <span>CI/CD</span><span>Grafana</span><span>Prometheus</span>
+                            <span>Loki</span><span>Firebase Cloud Messaging</span>
+                            <span>GitHub</span><span>WearOS</span>
                         </div>
                     </div>
                 </div>
